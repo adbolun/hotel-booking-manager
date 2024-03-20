@@ -18,11 +18,22 @@
 <ul>
     <c:choose>
         <c:when test="${not empty requestScope.orders}">
-            <c:forEach var="order" items="${requestScope.orders}">
-                <li>
-                    <a href="${pageContext.request.contextPath}/setOrderStatus?orderId=${order.orderId}&userId=${requestScope.userId}">${order}</a>
-                </li>
-            </c:forEach>
+            <c:choose>
+                <c:when test="${sessionScope.user.role eq 'ADMIN'}">
+                    <c:forEach var="order" items="${requestScope.orders}">
+                        <li>
+                            <a href="${pageContext.request.contextPath}/setOrderStatus?orderId=${order.orderId}&userId=${requestScope.userId}">${order}</a>
+                        </li>
+                    </c:forEach>
+                </c:when>
+                <c:otherwise>
+                    <c:forEach var="order" items="${requestScope.orders}">
+                        <li>
+                            <p>${order}</p>
+                        </li>
+                    </c:forEach>
+                </c:otherwise>
+            </c:choose>
         </c:when>
         <c:otherwise>
             <p><fmt:message key="page.user.orders.message"/></p>

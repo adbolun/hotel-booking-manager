@@ -23,7 +23,7 @@
             <label for="birthdate"><fmt:message key="page.user.detail.birthdate"/></label>
             <input type="date" name="birthdate" id="birthdate" value="${requestScope.userDetail.birthdate}">
             <br><br>
-            <label for="money"><fmt:message key="page.user.detail.amount"/>Money:</label>
+            <label for="money"><fmt:message key="page.user.detail.amount"/>:</label>
             <input type="number" name="money" id="money" value="${requestScope.userDetail.money}">
             <br><br>
             <button type="submit"><fmt:message key="page.personal.account.edit"/></button>
