@@ -1,4 +1,3 @@
-/*
 package com.bolun.hotel.filter;
 
 import com.bolun.hotel.service.UserDetailService;
@@ -50,8 +49,8 @@ public class AuthorizationFilter implements Filter {
 
     {
         ADMIN_PATHS.add(ADD_APARTMENT);
-        ADMIN_PATHS.add("/allUsers");
-        ADMIN_PATHS.add("/setOrderStatus");
+        ADMIN_PATHS.add(ALL_USERS);
+        ADMIN_PATHS.add(SET_ORDER_STATUS);
     }
 
 
@@ -90,4 +89,3 @@ public class AuthorizationFilter implements Filter {
         return user != null;
     }
 }
-*/
